@@ -9,6 +9,10 @@
     <img src="https://img.shields.io/badge/Antigravity%20IDE-%5E1.80.0-purple.svg?style=flat-square" alt="Antigravity IDE" />
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome" />
   </p>
+
+  <br />
+  <img src="assets/preview.png" alt="Antigravity Meter Live Preview" width="100%" style="border-radius: 12px; box-shadow: 0 16px 36px rgba(0,0,0,0.5);" />
+  <br />
 </div>
 
 ---
