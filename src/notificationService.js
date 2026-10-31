@@ -87,6 +87,10 @@ class NotificationService {
   }
 
   _sendWindowsNotification({ title, subtitle, message, sound, soundName }) {
+    if (sound) {
+      this.playSound(soundName).catch(() => {});
+    }
+
     return new Promise((resolve) => {
       const cleanTitle = this._escapeXml(title);
       const cleanSub = subtitle ? this._escapeXml(subtitle) : '';
@@ -94,13 +98,9 @@ class NotificationService {
 
       const textNodes = [
         `<text>${cleanTitle}</text>`,
-        cleanSub ? `<text>${cleanSub}</text>` : null,
-        cleanMsg ? `<text>${cleanMsg}</text>` : null
-      ].filter(Boolean).join('\n      ');
-
-      const audioXml = sound
-        ? '<audio src="ms-winsoundevent:Notification.Default" />'
-        : '<audio silent="true" />';
+        cleanSub ? `<text>${cleanSub}</text>` : '',
+        cleanMsg ? `<text>${cleanMsg}</text>` : ''
+      ].filter(Boolean).join('');
 
       let imageXml = '';
       const iconPath = path.resolve(__dirname, '..', 'assets', 'icon.png');
@@ -109,6 +109,7 @@ class NotificationService {
         imageXml = `<image placement="appLogoOverride" hint-crop="circle" src="${uri}" />`;
       }
 
+      const toastXml = `<toast><visual><binding template="ToastGeneric">${imageXml}${textNodes}</binding></visual></toast>`;
       const balloonText = cleanSub ? `${cleanSub} - ${cleanMsg}` : cleanMsg;
 
       const psScript = `
@@ -117,21 +118,9 @@ try {
   [Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime] | Out-Null
   [Windows.Data.Xml.Dom.XmlDocument, Windows.Data.Xml.Dom.XmlDocument, ContentType = WindowsRuntime] | Out-Null
 
-  $xmlTemplate = @"
-<toast>
-  <visual>
-    <binding template="ToastGeneric">
-      ${imageXml}
-      ${textNodes}
-    </binding>
-  </visual>
-  ${audioXml}
-</toast>
-"@
-
-  $xml = New-Object Windows.Data.Xml.Dom.XmlDocument
-  $xml.LoadXml($xmlTemplate)
-  $toast = [Windows.UI.Notifications.ToastNotification]::new($xml)
+  $xmlDoc = New-Object Windows.Data.Xml.Dom.XmlDocument
+  $xmlDoc.LoadXml('${toastXml}')
+  $toast = [Windows.UI.Notifications.ToastNotification]::new($xmlDoc)
 
   $appIds = @(
     'Google.AntigravityIDE',
@@ -170,7 +159,6 @@ try {
     $notify.BalloonTipText = '${balloonText.replace(/'/g, "''")}'
     $notify.Visible = $True
     $notify.ShowBalloonTip(4000)
-    ${sound ? '[System.Media.SystemSounds]::Asterisk.Play();' : ''}
     Start-Sleep -Seconds 3
     $notify.Dispose()
   } catch {
@@ -179,16 +167,10 @@ try {
 }
 `;
 
-      const child = cp.spawn('powershell.exe', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-Command', '-'], {
-        windowsHide: true,
-        stdio: ['pipe', 'pipe', 'pipe']
+      const b64 = Buffer.from(psScript, 'utf16le').toString('base64');
+      cp.execFile('powershell.exe', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-EncodedCommand', b64], (error) => {
+        resolve(!error);
       });
-
-      child.on('error', () => resolve(false));
-      child.on('close', (code) => resolve(code === 0));
-
-      child.stdin.write(psScript);
-      child.stdin.end();
     });
   }
 
@@ -219,14 +201,10 @@ try {
             Start-Sleep -Milliseconds 600
           }
         `;
-        const child = cp.spawn('powershell.exe', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-Command', '-'], {
-          windowsHide: true,
-          stdio: ['pipe', 'pipe', 'pipe']
+        const b64 = Buffer.from(winScript, 'utf16le').toString('base64');
+        cp.execFile('powershell.exe', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-EncodedCommand', b64], (error) => {
+          resolve(!error);
         });
-        child.on('error', () => resolve(false));
-        child.on('close', (code) => resolve(code === 0));
-        child.stdin.write(winScript);
-        child.stdin.end();
       } else {
         resolve(false);
       }
