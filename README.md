@@ -96,19 +96,37 @@ Clean and minimal settings:
 
 ---
 
-## 📦 Installation
+## 📦 Quick Install
 
-### From VSIX (Fastest)
+### 🤖 Option 1: Ask your Antigravity Agent (Easiest)
 
-1. Download the latest `antigravity-meter-1.4.0.vsix` from [Releases](https://github.com/davidcasanovasola-git/antigravity-meter/releases).
-2. Install via Antigravity IDE terminal:
+Simply copy and paste this prompt into your Antigravity chat:
+
+```text
+Please uninstall the legacy Antigravity Panel extension (if installed) and install Antigravity Meter from GitHub by downloading https://github.com/davidcasanovasola-git/antigravity-meter/releases/latest/download/antigravity-meter-1.4.0.vsix and installing it with "antigravity-ide --install-extension <path> --force".
+```
+
+---
+
+### 💻 Option 2: 1-Liner Terminal Command
+
+Paste this in your terminal to automatically remove the old panel and install Antigravity Meter:
+
+```bash
+curl -sL https://github.com/davidcasanovasola-git/antigravity-meter/releases/latest/download/antigravity-meter-1.4.0.vsix -o /tmp/antigravity-meter.vsix && antigravity-ide --uninstall-extension antigravity-panel 2>/dev/null; antigravity-ide --install-extension /tmp/antigravity-meter.vsix --force
+```
+
+---
+
+### 🛠️ Option 3: Manual Install / Build from Source
+
+1. Download `antigravity-meter-1.4.0.vsix` directly from [Releases](https://github.com/davidcasanovasola-git/antigravity-meter/releases).
+2. Install via GUI (*Extensions -> `...` -> Install from VSIX...*) or terminal:
    ```bash
    antigravity-ide --install-extension antigravity-meter-1.4.0.vsix
    ```
-   *Or open Antigravity IDE -> Extensions (`Cmd+Shift+X`) -> `...` menu -> **Install from VSIX...***
 
-### Build from Source
-
+To build manually from source:
 ```bash
 git clone https://github.com/davidcasanovasola-git/antigravity-meter.git
 cd antigravity-meter
