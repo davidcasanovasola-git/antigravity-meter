@@ -1,0 +1,14 @@
+{
+  "command.refresh.title": "Antigravity Meter: Refresh quota",
+  "command.testSound.title": "Antigravity Meter: Test selected alert sound",
+  "command.testNotification.title": "Antigravity Meter: Test system notification with sound",
+  "config.warningThreshold.description": "Warning threshold (yellow): percentage below which quota is considered low.",
+  "config.criticalThreshold.description": "Critical threshold (red): percentage below which quota is critical.",
+  "config.showResetTime.description": "Show quota reset countdown directly in the status bar (optional).",
+  "config.language.description": "Display language for the extension. In 'auto' mode, it automatically detects the computer/IDE language.",
+  "config.notifications.enabled.description": "Enable native OS notifications (not IDE popups) when a quota window resets.",
+  "config.notifications.sound.description": "Play sound with system notification when a quota window resets.",
+  "config.notifications.soundName.description": "Alert sound for macOS notifications.",
+  "config.refreshInterval.description": "Periodic check interval in seconds."
+}
+

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Antigravity Meter - Rediseño Icono Oficial (v2 Calibrado)</title>
+  <style>
+    body {
+      background: #090d16;
+      color: #f1f5f9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 32px;
+    }
+    h1 { margin-bottom: 8px; font-size: 26px; }
+    p.sub { color: #94a3b8; font-size: 15px; margin-bottom: 32px; line-height: 1.5; }
+    
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 32px 0 16px 0;
+      color: #38bdf8;
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 8px;
+    }
+
+    .grid-compare {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 28px;
+      margin-bottom: 32px;
+    }
+    .card {
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .card h3 {
+      margin: 0;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .badge {
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-weight: 500;
+      background: #0284c7;
+      color: #fff;
+    }
+
+    .theme-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .theme-box {
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .theme-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+    .bg-dark { background: #1e1e1e; color: #94a3b8; }
+    .bg-night { background: #0d1117; color: #58a6ff; }
+    .bg-light { background: #ffffff; color: #475569; border-color: #cbd5e1; }
+
+    .scale-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #030712;
+      padding: 16px 20px;
+      border-radius: 12px;
+      border: 1px solid #1f2937;
+    }
+    .scale-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .scale-col span {
+      font-size: 11px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+  <h1>⏳ Antigravity Meter - Rediseño y Calibración Final</h1>
+  <p class="sub">
+    Hemos rediseñado por completo la silueta del reloj: cuerpo más ancho y proporcionado (ancho 160px vs el anterior de 80px),
+    curvas orgánicas continuas, marcas de nivel integradas dentro de la propia geometría (eliminando flechas y ticks sueltos flotando),
+    y <strong>simetría matemática 100% exacta</strong> (48px de margen a ambos lados, 26px arriba y abajo).
+  </p>
+
+  <div class="grid-compare">
+    <!-- Opción A: Reloj Escultural Transparente -->
+    <div class="card">
+      <h3>
+        <span>Opción A · Silueta Transparente</span>
+        <span class="badge">Alfa Puro</span>
+      </h3>
+      <p style="font-size:13px; color:#94a3b8; margin:0;">
+        Fondo 100% transparente. La silueta es sólida y robusta, con relieve suave y sombras para integrarse de forma natural en cualquier tema.
+      </p>
+
+      <div class="theme-row">
+        <div class="theme-box bg-dark">
+          <span class="theme-label">VS Code Dark</span>
+          <img src="icon-v2-trans-128.png" width="96" height="96" alt="Dark">
+        </div>
+        <div class="theme-box bg-night">
+          <span class="theme-label">GitHub Dark</span>
+          <img src="icon-v2-trans-128.png" width="96" height="96" alt="Night">
+        </div>
+        <div class="theme-box bg-light">
+          <span class="theme-label">Tema Claro</span>
+          <img src="icon-v2-trans-128.png" width="96" height="96" alt="Light">
+        </div>
+      </div>
+
+      <div class="scale-row">
+        <div class="scale-col"><img src="icon-v2-trans-128.png" width="64" height="64"><span>64px</span></div>
+        <div class="scale-col"><img src="icon-v2-trans-128.png" width="42" height="42"><span>42px (IDE)</span></div>
+        <div class="scale-col"><img src="icon-v2-trans-128.png" width="28" height="28"><span>28px</span></div>
+        <div class="scale-col"><img src="icon-v2-trans-128.png" width="16" height="16"><span>16px</span></div>
+      </div>
+    </div>
+
+    <!-- Opción B: Baldosa Squircle Dark (Estilo Oficial Copilot / GitLens) -->
+    <div class="card">
+      <h3>
+        <span>Opción B · Baldosa Squircle Dark</span>
+        <span class="badge" style="background:#6366f1;">Formato App Oficial</span>
+      </h3>
+      <p style="font-size:13px; color:#94a3b8; margin:0;">
+        Marco cuadrado redondeado oscuro con borde tecnológico (estándar en Copilot, Docker, GitLens). Nunca se ve "descuadrado" al lado de otras extensiones.
+      </p>
+
+      <div class="theme-row">
+        <div class="theme-box bg-dark">
+          <span class="theme-label">VS Code Dark</span>
+          <img src="icon-v2-tile-128.png" width="96" height="96" alt="Dark">
+        </div>
+        <div class="theme-box bg-night">
+          <span class="theme-label">GitHub Dark</span>
+          <img src="icon-v2-tile-128.png" width="96" height="96" alt="Night">
+        </div>
+        <div class="theme-box bg-light">
+          <span class="theme-label">Tema Claro</span>
+          <img src="icon-v2-tile-128.png" width="96" height="96" alt="Light">
+        </div>
+      </div>
+
+      <div class="scale-row">
+        <div class="scale-col"><img src="icon-v2-tile-128.png" width="64" height="64"><span>64px</span></div>
+        <div class="scale-col"><img src="icon-v2-tile-128.png" width="42" height="42"><span>42px (IDE)</span></div>
+        <div class="scale-col"><img src="icon-v2-tile-128.png" width="28" height="28"><span>28px</span></div>
+        <div class="scale-col"><img src="icon-v2-tile-128.png" width="16" height="16"><span>16px</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

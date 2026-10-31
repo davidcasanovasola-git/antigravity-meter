@@ -1,0 +1,14 @@
+{
+  "command.refresh.title": "Antigravity Meter: Actualizar cuota",
+  "command.testSound.title": "Antigravity Meter: Probar sonido de alerta seleccionado",
+  "command.testNotification.title": "Antigravity Meter: Probar notificación de sistema con sonido",
+  "config.warningThreshold.description": "Margen de advertencia (color amarillo): porcentaje por debajo del cual se considera que la cuota está baja.",
+  "config.criticalThreshold.description": "Margen crítico (color rojo): porcentaje por debajo del cual la cuota es crítica.",
+  "config.showResetTime.description": "Mostrar el tiempo que falta hasta el reseteo de las cuotas directamente en la barra inferior (opcional).",
+  "config.language.description": "Idioma de visualización de la extensión. En modo 'auto' detecta el idioma del ordenador/IDE automáticamente.",
+  "config.notifications.enabled.description": "Activar notificaciones nativas de sistema operativo (no del IDE) cuando se resetea una ventana de cuota.",
+  "config.notifications.sound.description": "Emitir sonido con la notificación de sistema cuando se resetea una ventana de cuota.",
+  "config.notifications.soundName.description": "Sonido de alerta para las notificaciones en macOS.",
+  "config.refreshInterval.description": "Intervalo de comprobación periódica en segundos."
+}
+

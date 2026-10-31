@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bgGrad4D" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161826"/>
+      <stop offset="100%" stop-color="#0A0B12"/>
+    </linearGradient>
+
+    <linearGradient id="meterGrad4D" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="25%" stop-color="#F59E0B"/>
+      <stop offset="60%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+
+    <linearGradient id="deltaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Container -->
+  <rect x="12" y="12" width="232" height="232" rx="54" fill="url(#bgGrad4D)" stroke="#282C44" stroke-width="2"/>
+
+  <!-- Upper Speedometer Track Arc (from 145deg to 35deg) -->
+  <path d="M 52 160 A 88 88 0 1 1 204 160" fill="none" stroke="#222538" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 52 160 A 88 88 0 1 1 188 86" fill="none" stroke="url(#meterGrad4D)" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- Ticks -->
+  <circle cx="52" cy="160" r="3" fill="#64748B"/>
+  <circle cx="128" cy="40" r="3.5" fill="#38BDF8"/>
+  <circle cx="204" cy="160" r="3" fill="#64748B"/>
+
+  <!-- Minimalist 'A' Delta in Center (Y: 82 to 174 -> Center = 128) -->
+  <path d="M 128 82 L 164 174 L 144 174 L 128 132 L 112 174 L 92 174 Z" fill="#F8FAFC"/>
+  <!-- Glowing Horizontal Notch -->
+  <rect x="108" y="146" width="40" height="8" rx="4" fill="#38BDF8"/>
+</svg>
+

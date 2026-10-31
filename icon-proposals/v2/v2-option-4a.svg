@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bgGrad4A" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181726"/>
+      <stop offset="100%" stop-color="#0C0B12"/>
+    </linearGradient>
+
+    <!-- 'A' Glyph Gradient: Indigo to Cyan to Emerald -->
+    <linearGradient id="aGrad4A" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818CF8"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#34D399"/>
+    </linearGradient>
+
+    <!-- Orbit Gauge Gradient: Coral / Amber to Green -->
+    <linearGradient id="orbitGrad4A" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F43F5E"/>
+      <stop offset="40%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+
+    <filter id="glow4A" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Squircle Container (Centered at 128, 128) -->
+  <rect x="12" y="12" width="232" height="232" rx="54" fill="url(#bgGrad4A)" stroke="#2D283E" stroke-width="2"/>
+
+  <!-- Background Orbit Track (Inactive 280deg arc) -->
+  <circle cx="128" cy="128" r="82" fill="none" stroke="#222030" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- Active Orbit Meter Arc (Glowing Gradient) -->
+  <circle cx="128" cy="128" r="82" fill="none" stroke="url(#orbitGrad4A)" stroke-width="12" 
+          stroke-linecap="round" stroke-dasharray="390" stroke-dashoffset="110" 
+          transform="rotate(-120 128 128)" filter="url(#glow4A)"/>
+
+  <!-- Stylized 'A' Apex (Mathematically Centered: Y from 78 to 178 -> center = 128) -->
+  <path d="M 128 78 L 172 178 L 150 178 L 128 126 L 106 178 L 84 178 Z" fill="url(#aGrad4A)"/>
+
+  <!-- Glowing Horizontal Crossbar -->
+  <rect x="104" y="142" width="48" height="10" rx="5" fill="#38BDF8" filter="url(#glow4A)"/>
+</svg>
+

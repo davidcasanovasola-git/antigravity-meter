@@ -1,0 +1,165 @@
+{
+  "name": "antigravity-meter",
+  "displayName": "Antigravity Meter",
+  "description": "Medidor hiper-simplificado de cuota para Antigravity IDE (Gemini y Claude/GPT) con límite semanal y notificaciones de sistema.",
+  "version": "1.4.0",
+  "publisher": "dcasanos",
+  "icon": "assets/icon.png",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidcasanovasola-git/antigravity-meter.git"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "keywords": [
+    "Antigravity",
+    "Antigravity Meter",
+    "Quota",
+    "Weekly Limit",
+    "Gemini",
+    "Claude",
+    "GPT",
+    "Usage"
+  ],
+  "main": "./src/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "antigravityMeter.refresh",
+        "title": "%command.refresh.title%",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "antigravityMeter.testSound",
+        "title": "%command.testSound.title%",
+        "icon": "$(unmute)"
+      },
+      {
+        "command": "antigravityMeter.testNotification",
+        "title": "%command.testNotification.title%",
+        "icon": "$(bell)"
+      }
+    ],
+    "configuration": {
+      "title": "Antigravity Meter",
+      "properties": {
+        "antigravityMeter.warningThreshold": {
+          "type": "number",
+          "default": 40,
+          "minimum": 5,
+          "maximum": 95,
+          "order": 1,
+          "description": "%config.warningThreshold.description%"
+        },
+        "antigravityMeter.criticalThreshold": {
+          "type": "number",
+          "default": 20,
+          "minimum": 1,
+          "maximum": 50,
+          "order": 2,
+          "description": "%config.criticalThreshold.description%"
+        },
+        "antigravityMeter.showResetTime": {
+          "type": "string",
+          "default": "both",
+          "enum": [
+            "both",
+            "5h",
+            "weekly",
+            "none"
+          ],
+          "enumDescriptions": [
+            "Muestra el tiempo restante tanto de la ventana de 5h como del límite semanal (ej: 95% (3h 39m) · Sem: 91% (6d 1h))",
+            "Muestra únicamente el tiempo restante de la ventana de 5 horas",
+            "Muestra únicamente el tiempo restante del límite semanal",
+            "Oculta los tiempos en la barra (solo muestra porcentajes; el tiempo se ve al pasar el ratón)"
+          ],
+          "order": 3,
+          "description": "%config.showResetTime.description%"
+        },
+        "antigravityMeter.language": {
+          "type": "string",
+          "default": "auto",
+          "enum": [
+            "auto",
+            "en",
+            "es",
+            "fr",
+            "de",
+            "zh-cn",
+            "ja",
+            "pt-br",
+            "it"
+          ],
+          "enumDescriptions": [
+            "Detección automática (idioma del sistema operativo o del IDE)",
+            "English",
+            "Español",
+            "Français",
+            "Deutsch",
+            "简体中文",
+            "日本語",
+            "Português (Brasil)",
+            "Italiano"
+          ],
+          "order": 4,
+          "description": "%config.language.description%",
+          "markdownDescription": "%config.language.description%"
+        },
+        "antigravityMeter.notifications.enabled": {
+          "type": "boolean",
+          "default": true,
+          "order": 5,
+          "description": "%config.notifications.enabled.description%"
+        },
+        "antigravityMeter.notifications.sound": {
+          "type": "boolean",
+          "default": true,
+          "order": 6,
+          "description": "%config.notifications.sound.description%",
+          "markdownDescription": "Emitir sonido con la notificación de sistema cuando se resetea una ventana de cuota.\n\n[▶ Escuchar sonido de prueba](command:antigravityMeter.testSound)"
+        },
+        "antigravityMeter.notifications.soundName": {
+          "type": "string",
+          "default": "Glass",
+          "order": 7,
+          "enum": [
+            "Glass",
+            "Ping",
+            "Hero",
+            "Blow",
+            "Bottle",
+            "Frog",
+            "Funk",
+            "Morse",
+            "Purr",
+            "Sosumi",
+            "Submarine",
+            "Tink",
+            "Basso",
+            "Pop"
+          ],
+          "description": "%config.notifications.soundName.description%",
+          "markdownDescription": "Sonido de alerta para las notificaciones en macOS. Al cambiar la opción en este selector sonará automáticamente como vista previa.\n\n[▶ Probar este sonido](command:antigravityMeter.testSound) · [🔔 Probar notificación completa](command:antigravityMeter.testNotification)"
+        },
+        "antigravityMeter.refreshInterval": {
+          "type": "number",
+          "default": 60,
+          "minimum": 10,
+          "maximum": 600,
+          "order": 8,
+          "description": "%config.refreshInterval.description%"
+        }
+      }
+    }
+  }
+}

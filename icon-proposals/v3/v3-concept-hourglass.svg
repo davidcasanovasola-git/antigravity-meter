@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bgHg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="100%" stop-color="#020408" />
+    </linearGradient>
+
+    <!-- Glass Contour Gradient -->
+    <linearGradient id="glassStroke" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#64748b" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+
+    <!-- Upward Liquid/Energy Gradient -->
+    <linearGradient id="energyUp" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="60%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#a7f3d0" />
+    </linearGradient>
+
+    <!-- Lower Reserve Gradient -->
+    <linearGradient id="energyDown" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d97706" />
+      <stop offset="100%" stop-color="#78350f" />
+    </linearGradient>
+
+    <filter id="hgGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="dotGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b" />
+      <feMerge>
+        <feMergeNode in="b" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect x="12" y="12" width="232" height="232" rx="56" fill="url(#bgHg)" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Hourglass Base Caps (Titanium Brackets) -->
+  <rect x="82" y="44" width="92" height="8" rx="4" fill="#334155" stroke="#475569" stroke-width="1.5" />
+  <rect x="82" y="204" width="92" height="8" rx="4" fill="#334155" stroke="#475569" stroke-width="1.5" />
+
+  <!-- Upper Liquid / Accumulated Anti-Gravity Tokens (Gemini/Claude 5h) -->
+  <path d="M 88,52 L 168,52 C 168,76 150,96 138,108 L 118,108 C 106,96 88,76 88,52 Z" 
+        fill="url(#energyUp)" opacity="0.85" filter="url(#dotGlow)"/>
+  <!-- Liquid Surface Curve -->
+  <ellipse cx="128" cy="54" rx="40" ry="4" fill="#bae6fd" opacity="0.9" />
+
+  <!-- Lower Reserve Quota (Weekly Pool) -->
+  <path d="M 106,164 C 94,178 88,192 88,204 L 168,204 C 168,192 162,178 150,164 Z" 
+        fill="url(#energyDown)" opacity="0.75" />
+  <ellipse cx="128" cy="164" rx="22" ry="3" fill="#fde68a" opacity="0.8" />
+
+  <!-- Main Glass Body Contour -->
+  <path d="M 88,52 
+           C 88,88 120,116 122,128 
+           C 120,140 88,168 88,204 
+           L 168,204 
+           C 168,168 136,140 134,128 
+           C 136,116 168,88 168,52 
+           Z" 
+        fill="none" 
+        stroke="url(#glassStroke)" 
+        stroke-width="3" 
+        stroke-linejoin="round" />
+
+  <!-- Anti-Gravity Upward Particle Stream (Rising Dots Defying Gravity!) -->
+  <g fill="#e0f2fe" filter="url(#dotGlow)">
+    <!-- Particles rising through neck into top bulb -->
+    <circle cx="128" cy="148" r="3" fill="#fbbf24" />
+    <circle cx="126" cy="136" r="3.5" fill="#38bdf8" />
+    <circle cx="130" cy="124" r="4" fill="#ffffff" />
+    <circle cx="125" cy="112" r="3" fill="#7dd3fc" />
+    <circle cx="132" cy="100" r="3.5" fill="#38bdf8" />
+    <circle cx="124" cy="88" r="2.5" fill="#bae6fd" />
+    <circle cx="134" cy="76" r="2" fill="#e0f2fe" />
+    <!-- Floating dispersion dots in upper chamber -->
+    <circle cx="114" cy="72" r="2" fill="#38bdf8" />
+    <circle cx="144" cy="68" r="2.5" fill="#67e8f9" />
+  </g>
+
+  <!-- Upward Inverted Gravity Arrows (Ghosted side indicators) -->
+  <g stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7">
+    <path d="M 62,136 L 62,118 M 58,124 L 62,118 L 66,124" />
+    <path d="M 194,136 L 194,118 M 190,124 L 194,118 L 198,124" />
+  </g>
+
+  <!-- Side Quota Level Graduations -->
+  <g stroke="#475569" stroke-width="1.5" stroke-linecap="round">
+    <line x1="176" y1="64" x2="184" y2="64" stroke="#38bdf8" stroke-width="2"/>
+    <line x1="174" y1="80" x2="180" y2="80" stroke="#38bdf8" />
+    <line x1="172" y1="96" x2="178" y2="96" stroke="#38bdf8" />
+    
+    <line x1="172" y1="160" x2="178" y2="160" stroke="#f59e0b" />
+    <line x1="174" y1="176" x2="180" y2="176" stroke="#f59e0b" stroke-width="2"/>
+    <line x1="176" y1="192" x2="184" y2="192" stroke="#f59e0b" stroke-width="2"/>
+  </g>
+
+  <!-- Specular Reflection / Glass Sheen -->
+  <path d="M 94,60 C 94,84 114,106 116,116" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+</svg>
+

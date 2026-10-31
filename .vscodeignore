@@ -1,0 +1,9 @@
+.vscode/**
+.vscode-test/**
+.git/**
+.gitignore
+icon-proposals/**
+assets/icons/transparent/**
+assets/icons/tile/**
+**/*.map
+**/*.ts

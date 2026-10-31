@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bgSing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c17" />
+      <stop offset="100%" stop-color="#020409" />
+    </linearGradient>
+
+    <!-- Accretion Gradients -->
+    <linearGradient id="gemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+
+    <linearGradient id="claudeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#dc2626" />
+    </linearGradient>
+
+    <linearGradient id="purpleRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+
+    <filter id="singGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="b1" />
+      <feGaussianBlur stdDeviation="16" result="b2" />
+      <feMerge>
+        <feMergeNode in="b2" />
+        <feMergeNode in="b1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="sharpGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="b" />
+      <feMerge>
+        <feMergeNode in="b" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect x="12" y="12" width="232" height="232" rx="56" fill="url(#bgSing)" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Radial Background Guide Grid (HUD) -->
+  <circle cx="128" cy="128" r="92" fill="none" stroke="#1e293b" stroke-dasharray="2 6" stroke-width="1.5" />
+  <circle cx="128" cy="128" r="74" fill="none" stroke="#1e293b" stroke-dasharray="3 7" stroke-width="1.5" />
+
+  <!-- Outer Meter Segments: 5-Hour Quota Arc (Top & Right cyan/blue) -->
+  <!-- Arc from 135 deg to 405 deg (270 deg span) -->
+  <circle cx="128" cy="128" r="86" fill="none" stroke="#1e293b" stroke-width="7" stroke-linecap="round" />
+  <circle cx="128" cy="128" r="86" fill="none" stroke="url(#gemGrad)" stroke-width="7" 
+          stroke-dasharray="380 540" stroke-dashoffset="135" stroke-linecap="round" filter="url(#sharpGlow)" />
+
+  <!-- Inner Meter Segments: Weekly Quota Arc (amber/coral) -->
+  <circle cx="128" cy="128" r="68" fill="none" stroke="#1e293b" stroke-width="6" stroke-linecap="round" />
+  <circle cx="128" cy="128" r="68" fill="none" stroke="url(#claudeGrad)" stroke-width="6" 
+          stroke-dasharray="280 427" stroke-dashoffset="60" stroke-linecap="round" filter="url(#sharpGlow)" />
+
+  <!-- Gravitational Warping Accretion Jets / Blades -->
+  <g opacity="0.8">
+    <!-- Jet 1 -->
+    <path d="M 128,128 L 74,74 C 92,62 110,58 128,58 Z" fill="url(#gemGrad)" opacity="0.35"/>
+    <!-- Jet 2 -->
+    <path d="M 128,128 L 182,182 C 164,194 146,198 128,198 Z" fill="url(#claudeGrad)" opacity="0.35"/>
+  </g>
+
+  <!-- Relativistic Beaming / Warp Ellipse -->
+  <ellipse cx="128" cy="128" rx="60" ry="24" transform="rotate(-30 128 128)" 
+           fill="none" stroke="url(#purpleRing)" stroke-width="3" filter="url(#sharpGlow)" opacity="0.9" />
+
+  <!-- Event Horizon Halo Glow -->
+  <circle cx="128" cy="128" r="38" fill="none" stroke="#38bdf8" stroke-width="3" filter="url(#singGlow)" />
+  <circle cx="128" cy="128" r="36" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.9" />
+
+  <!-- Pitch Black Singularity Void (Absolute Center) -->
+  <circle cx="128" cy="128" r="32" fill="#030712" />
+
+  <!-- Core Quantum Singularity Pin (Center White Flash) -->
+  <circle cx="128" cy="128" r="4" fill="#ffffff" filter="url(#sharpGlow)"/>
+
+  <!-- HUD Crosshairs / Meter Calibration Marks -->
+  <g stroke="#64748b" stroke-width="2" stroke-linecap="round" opacity="0.7">
+    <line x1="128" y1="28" x2="128" y2="38" stroke="#38bdf8" stroke-width="2.5" />
+    <line x1="128" y1="218" x2="128" y2="228" />
+    <line x1="28" y1="128" x2="38" y2="128" />
+    <line x1="218" y1="128" x2="228" y2="128" stroke="#f59e0b" stroke-width="2.5" />
+  </g>
+
+  <!-- Floating Graviton Nodes -->
+  <circle cx="68" cy="88" r="3" fill="#38bdf8" filter="url(#sharpGlow)"/>
+  <circle cx="188" cy="168" r="3" fill="#f59e0b" filter="url(#sharpGlow)"/>
+</svg>
+

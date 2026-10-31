@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <!-- Perfectly centered omnidirectional shadow (dx=0, dy=0) for high contrast on light & dark themes -->
+    <filter id="centerShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#000000" flood-opacity="0.55" />
+    </filter>
+
+    <!-- Glass Contour Gradient -->
+    <linearGradient id="glassStroke" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#64748b" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+
+    <!-- Upper Liquid / Active 5h Gemini Gradient -->
+    <linearGradient id="energyUp" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="60%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#a7f3d0" />
+    </linearGradient>
+
+    <!-- Lower Reserve / Weekly Claude Gradient -->
+    <linearGradient id="energyDown" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="60%" stop-color="#d97706" />
+      <stop offset="100%" stop-color="#78350f" />
+    </linearGradient>
+
+    <!-- Cap Metallic Gradient -->
+    <linearGradient id="capMetal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="50%" stop-color="#475569" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+
+    <!-- Subtle Glow for Quantum Particles -->
+    <filter id="particleGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g filter="url(#centerShadow)">
+    <!-- Internal Glass Tint (Top and Bottom) -->
+    <path d="M 86,50 L 170,50 C 170,88 135,116 134,128 C 135,116 170,88 170,50 Z" 
+          fill="#0284c7" fill-opacity="0.12" />
+    <path d="M 122,128 C 121,140 86,168 86,206 L 170,206 C 170,168 135,140 134,128 Z" 
+          fill="#d97706" fill-opacity="0.1" />
+
+    <!-- Upper Accumulated Anti-Gravity Liquid (Top Chamber) -->
+    <path d="M 86,50 L 170,50 C 170,76 150,96 138,108 L 118,108 C 106,96 86,76 86,50 Z" 
+          fill="url(#energyUp)" opacity="0.9" filter="url(#particleGlow)" />
+    <!-- Meniscus / Surface Rim -->
+    <ellipse cx="128" cy="52" rx="42" ry="4" fill="#bae6fd" opacity="0.95" />
+
+    <!-- Lower Reserve Quota (Bottom Chamber) -->
+    <path d="M 106,164 C 94,178 86,192 86,206 L 170,206 C 170,192 162,178 150,164 Z" 
+          fill="url(#energyDown)" opacity="0.85" />
+    <ellipse cx="128" cy="164" rx="22" ry="3" fill="#fde68a" opacity="0.9" />
+
+    <!-- Main Hourglass Outer Glass Contour (Symmetrically calibrated) -->
+    <path d="M 86,50 
+             C 86,88 121,116 122,128 
+             C 121,140 86,168 86,206 
+             L 170,206 
+             C 170,168 135,140 134,128 
+             C 135,116 170,88 170,50 
+             Z" 
+          fill="none" 
+          stroke="url(#glassStroke)" 
+          stroke-width="3.5" 
+          stroke-linejoin="round" />
+
+    <!-- Anti-Gravity Upward Particle Stream (Ascending Tokens centered at x=128) -->
+    <g filter="url(#particleGlow)">
+      <circle cx="128" cy="148" r="3" fill="#fbbf24" />
+      <circle cx="125" cy="136" r="3.5" fill="#38bdf8" />
+      <circle cx="130" cy="124" r="4.5" fill="#ffffff" />
+      <circle cx="125" cy="112" r="3.5" fill="#7dd3fc" />
+      <circle cx="131" cy="100" r="3.5" fill="#38bdf8" />
+      <circle cx="126" cy="88" r="2.5" fill="#bae6fd" />
+      <circle cx="130" cy="76" r="2" fill="#e0f2fe" />
+      <circle cx="116" cy="72" r="2" fill="#38bdf8" />
+      <circle cx="140" cy="72" r="2" fill="#67e8f9" />
+    </g>
+
+    <!-- Top Cap (Calibrated center x=128, y=46) -->
+    <rect x="78" y="42" width="100" height="8" rx="4" fill="url(#capMetal)" stroke="#64748b" stroke-width="1.5" />
+    <line x1="82" y1="44" x2="174" y2="44" stroke="#94a3b8" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+    
+    <!-- Bottom Cap (Calibrated center x=128, y=210) -->
+    <rect x="78" y="206" width="100" height="8" rx="4" fill="url(#capMetal)" stroke="#64748b" stroke-width="1.5" />
+    <line x1="82" y1="208" x2="174" y2="208" stroke="#94a3b8" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+
+    <!-- Upward Anti-Gravity Indicator Arrows (Calibrated equidistant: 128 - 72 = 56, 128 + 72 = 200) -->
+    <g stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.85">
+      <path d="M 56,136 L 56,118 M 51,124 L 56,118 L 61,124" />
+      <path d="M 200,136 L 200,118 M 195,124 L 200,118 L 205,124" />
+    </g>
+
+    <!-- Balanced Quota Calibration Ticks -->
+    <!-- Left Side: 5-Hour Cycle Ticks (Cyan) at x=69..78 (distance from 128 = 50..59) -->
+    <g stroke="#94a3b8" stroke-width="2" stroke-linecap="round">
+      <line x1="69" y1="64" x2="78" y2="64" stroke="#38bdf8" stroke-width="2.5"/>
+      <line x1="72" y1="80" x2="78" y2="80" stroke="#38bdf8" />
+      <line x1="70" y1="96" x2="78" y2="96" stroke="#38bdf8" />
+      <line x1="73" y1="112" x2="78" y2="112" stroke="#38bdf8" />
+    </g>
+
+    <!-- Right Side: Weekly Limit Ticks (Amber) at x=178..187 (distance from 128 = 50..59) -->
+    <g stroke="#94a3b8" stroke-width="2" stroke-linecap="round">
+      <line x1="178" y1="144" x2="183" y2="144" stroke="#f59e0b" />
+      <line x1="178" y1="160" x2="186" y2="160" stroke="#f59e0b" />
+      <line x1="178" y1="176" x2="184" y2="176" stroke="#f59e0b" />
+      <line x1="178" y1="192" x2="187" y2="192" stroke="#f59e0b" stroke-width="2.5"/>
+    </g>
+
+    <!-- Symmetrical Specular Sheen (Subtle highlights) -->
+    <path d="M 92,56 C 92,82 112,106 114,116" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.45" stroke-linecap="round"/>
+    <path d="M 164,56 C 164,82 144,106 142,116" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.25" stroke-linecap="round"/>
+    <path d="M 92,200 C 92,182 108,156 112,144" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+  </g>
+</svg>

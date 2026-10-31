@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgTile" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e131f" />
+      <stop offset="100%" stop-color="#04060a" />
+    </linearGradient>
+
+    <!-- Liquid Upper Gradient: Electric Cyan to Deep Tech Blue -->
+    <linearGradient id="liquidCyan" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="60%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#67e8f9" />
+    </linearGradient>
+
+    <!-- Liquid Lower Gradient: Tech Amber to Coral -->
+    <linearGradient id="liquidAmber" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="60%" stop-color="#ea580c" />
+      <stop offset="100%" stop-color="#9a3412" />
+    </linearGradient>
+
+    <!-- Glass Rim Metallic Stroke Gradient -->
+    <linearGradient id="glassStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="30%" stop-color="#94a3b8" />
+      <stop offset="70%" stop-color="#64748b" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+
+    <!-- Caps Gradient: Dark Titanium -->
+    <linearGradient id="capTitanium" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="50%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+
+    <filter id="neon" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="b" />
+      <feMerge>
+        <feMergeNode in="b" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <radialGradient id="ambientCyan" cx="50%" cy="35%" r="45%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="ambientAmber" cx="50%" cy="75%" r="40%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Squircle Base Tile -->
+  <rect x="12" y="12" width="232" height="232" rx="56" fill="url(#bgTile)" stroke="#1e293b" stroke-width="2"/>
+  
+  <!-- Subtle Internal Energy Glows inside the tile -->
+  <rect x="14" y="14" width="228" height="228" rx="54" fill="url(#ambientCyan)" />
+  <rect x="14" y="14" width="228" height="228" rx="54" fill="url(#ambientAmber)" />
+
+  <g>
+    <!-- Titanium Caps -->
+    <!-- Top Cap -->
+    <rect x="52" y="32" width="152" height="14" rx="7" fill="url(#capTitanium)" stroke="#475569" stroke-width="1.5"/>
+    <line x1="60" y1="36" x2="196" y2="36" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+    <circle cx="128" cy="39" r="2.5" fill="#38bdf8" filter="url(#neon)"/>
+
+    <!-- Bottom Cap -->
+    <rect x="52" y="210" width="152" height="14" rx="7" fill="url(#capTitanium)" stroke="#475569" stroke-width="1.5"/>
+    <line x1="60" y1="214" x2="196" y2="214" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+    <circle cx="128" cy="217" r="2.5" fill="#f59e0b" filter="url(#neon)"/>
+
+    <!-- Glass Interior Ambient Tint -->
+    <path d="M 64,46 L 192,46 C 192,84 150,116 146,128 C 150,116 192,84 192,46 Z" fill="#0284c7" fill-opacity="0.15"/>
+    <path d="M 110,128 C 106,140 64,172 64,210 L 192,210 C 192,172 150,140 146,128 Z" fill="#ea580c" fill-opacity="0.12"/>
+
+    <!-- Top Plasma Liquid (Antigravity Pool) -->
+    <path d="M 64,46 L 192,46 C 192,80 166,104 148,114 L 108,114 C 90,104 64,80 64,46 Z" 
+          fill="url(#liquidCyan)" opacity="0.9" filter="url(#neon)"/>
+    <ellipse cx="128" cy="48" rx="60" ry="5" fill="#e0f2fe" opacity="0.95"/>
+
+    <!-- Bottom Reserve Liquid (Weekly Pool) -->
+    <path d="M 96,166 C 80,182 68,196 66,210 L 190,210 C 188,196 176,182 160,166 Z" 
+          fill="url(#liquidAmber)" opacity="0.85"/>
+    <ellipse cx="128" cy="166" rx="32" ry="4" fill="#fde68a" opacity="0.9"/>
+
+    <!-- Main Glass Body Contour -->
+    <path d="M 64,46 
+             C 64,90 106,118 110,128 
+             C 106,138 64,166 64,210 
+             L 192,210 
+             C 192,166 150,138 146,128 
+             C 150,118 192,90 192,46 
+             Z" 
+          fill="none" 
+          stroke="url(#glassStroke)" 
+          stroke-width="5" 
+          stroke-linejoin="round"/>
+
+    <!-- Integrated Level Notches on Glass Wall -->
+    <!-- Top Chamber Ticks (Cyan) -->
+    <line x1="68" y1="65" x2="80" y2="65" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="72" y1="82" x2="82" y2="82" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+    <line x1="78" y1="99" x2="86" y2="99" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+    <line x1="188" y1="65" x2="176" y2="65" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="184" y1="82" x2="174" y2="82" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+    <line x1="178" y1="99" x2="170" y2="99" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Bottom Chamber Ticks (Amber) -->
+    <line x1="84" y1="157" x2="92" y2="157" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+    <line x1="76" y1="174" x2="86" y2="174" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+    <line x1="68" y1="191" x2="80" y2="191" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="172" y1="157" x2="164" y2="157" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+    <line x1="180" y1="174" x2="170" y2="174" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+    <line x1="188" y1="191" x2="176" y2="191" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Upward Anti-Gravity Center Flow & Ascending Particles -->
+    <line x1="128" y1="95" x2="128" y2="160" stroke="#bae6fd" stroke-width="2" stroke-dasharray="3 4" opacity="0.7"/>
+
+    <!-- Ascending Quantum Chevron -->
+    <path d="M 120,132 L 128,124 L 136,132" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#neon)"/>
+    <path d="M 122,142 L 128,136 L 134,142" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+
+    <!-- Levitating Sparkles -->
+    <g filter="url(#neon)">
+      <circle cx="128" cy="154" r="3" fill="#fbbf24" />
+      <circle cx="128" cy="112" r="3.5" fill="#38bdf8" />
+      <circle cx="128" cy="92" r="4" fill="#ffffff" />
+      <circle cx="116" cy="74" r="3" fill="#67e8f9" />
+      <circle cx="140" cy="74" r="3" fill="#38bdf8" />
+      <circle cx="128" cy="62" r="4.5" fill="#e0f2fe" />
+    </g>
+
+    <!-- Glass Specular Highlights -->
+    <path d="M 72,52 C 72,86 100,112 104,120" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+    <path d="M 184,52 C 184,86 156,112 152,120" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+    <path d="M 72,204 C 72,174 98,144 102,136" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+  </g>
+</svg>

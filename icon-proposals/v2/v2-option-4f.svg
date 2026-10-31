@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bgGrad4F" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#151722"/>
+      <stop offset="100%" stop-color="#0A0B10"/>
+    </linearGradient>
+
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#818CF8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Container -->
+  <rect x="12" y="12" width="232" height="232" rx="54" fill="url(#bgGrad4F)" stroke="#222538" stroke-width="2"/>
+
+  <!-- Delicate Outer Track -->
+  <circle cx="128" cy="128" r="80" fill="none" stroke="#222538" stroke-width="6" stroke-linecap="round"/>
+  <!-- Active Arc -->
+  <circle cx="128" cy="128" r="80" fill="none" stroke="url(#lineGrad)" stroke-width="8" 
+          stroke-linecap="round" stroke-dasharray="377" stroke-dashoffset="90" 
+          transform="rotate(-90 128 128)"/>
+
+  <!-- Pulsing Orbit Terminal Dot -->
+  <circle cx="128" cy="48" r="5" fill="#38BDF8"/>
+
+  <!-- Centered Precision Monoline 'A' (Y: 82 to 174 -> Center = 128) -->
+  <path d="M 128 82 L 168 174 M 128 82 L 88 174" fill="none" stroke="#F8FAFC" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Glowing Floating Crossbar -->
+  <line x1="102" y1="144" x2="154" y2="144" stroke="#38BDF8" stroke-width="8" stroke-linecap="round"/>
+</svg>
+

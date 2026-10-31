@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bgGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#191724"/>
+      <stop offset="100%" stop-color="#0E0D17"/>
+    </linearGradient>
+
+    <linearGradient id="aGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818CF8"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#34D399"/>
+    </linearGradient>
+
+    <linearGradient id="orbitGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F43F5E"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Container -->
+  <rect x="12" y="12" width="232" height="232" rx="54" fill="url(#bgGrad4)" stroke="#2D283E" stroke-width="2"/>
+
+  <!-- Surrounding Meter Track -->
+  <circle cx="128" cy="128" r="82" fill="none" stroke="#252336" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="128" cy="128" r="82" fill="none" stroke="url(#orbitGrad)" stroke-width="12" 
+          stroke-linecap="round" stroke-dasharray="386" stroke-dashoffset="100" transform="rotate(-120 128 128)"/>
+
+  <!-- Stylized Antigravity 'A' Apex Chevron -->
+  <path d="M 128 66 L 168 152 L 148 152 L 128 108 L 108 152 L 88 152 Z" fill="url(#aGrad)"/>
+  <rect x="110" y="132" width="36" height="8" rx="4" fill="#38BDF8"/>
+</svg>
+

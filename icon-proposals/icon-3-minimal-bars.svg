@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161824"/>
+      <stop offset="100%" stop-color="#0B0C12"/>
+    </linearGradient>
+
+    <linearGradient id="geminiBlue" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+
+    <linearGradient id="claudeOrange" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Container -->
+  <rect x="12" y="12" width="232" height="232" rx="54" fill="url(#bgGrad3)" stroke="#262A40" stroke-width="2"/>
+
+  <!-- Left Meter Column (Gemini) -->
+  <rect x="68" y="56" width="46" height="144" rx="23" fill="#1C1E2D" stroke="#2B2F45" stroke-width="2"/>
+  <rect x="74" y="76" width="34" height="118" rx="17" fill="url(#geminiBlue)"/>
+  <circle cx="91" cy="70" r="4" fill="#38BDF8"/>
+
+  <!-- Right Meter Column (Weekly / Claude) -->
+  <rect x="142" y="56" width="46" height="144" rx="23" fill="#1C1E2D" stroke="#2B2F45" stroke-width="2"/>
+  <rect x="148" y="112" width="34" height="82" rx="17" fill="url(#claudeOrange)"/>
+  <circle cx="165" cy="70" r="4" fill="#FB923C"/>
+</svg>
+
