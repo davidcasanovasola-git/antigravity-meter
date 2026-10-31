@@ -40,7 +40,7 @@ Most quota extensions for AI IDEs come packed with bloat: heavy WebViews, backgr
 
 ## 🥊 Comparison with Legacy Extensions
 
-| Feature | Legacy Antigravity Panel | **Antigravity Meter** ⏳ |
+| Feature | Other / Legacy Extensions | **Antigravity Meter** ⏳ |
 | :--- | :---: | :---: |
 | **Weekly Limit in Status Bar** | ❌ No | **✅ Yes (Crucial)** |
 | **5-Hour Reset Countdown** | ❌ Hidden in submenu | **✅ Inline / Hover** |
@@ -103,17 +103,17 @@ Clean and minimal settings:
 Simply copy and paste this prompt into your Antigravity chat:
 
 ```text
-Please uninstall the legacy Antigravity Panel extension (if installed) and install Antigravity Meter from GitHub by downloading https://github.com/davidcasanovasola-git/antigravity-meter/releases/latest/download/antigravity-meter-1.4.0.vsix and installing it with "antigravity-ide --install-extension <path> --force".
+Please install the Antigravity Meter extension from GitHub by downloading https://github.com/davidcasanovasola-git/antigravity-meter/releases/latest/download/antigravity-meter-1.4.0.vsix and installing it with "antigravity-ide --install-extension <path> --force".
 ```
 
 ---
 
 ### 💻 Option 2: 1-Liner Terminal Command
 
-Paste this in your terminal to automatically remove the old panel and install Antigravity Meter:
+Paste this in your terminal to automatically download and install Antigravity Meter:
 
 ```bash
-curl -sL https://github.com/davidcasanovasola-git/antigravity-meter/releases/latest/download/antigravity-meter-1.4.0.vsix -o /tmp/antigravity-meter.vsix && antigravity-ide --uninstall-extension antigravity-panel 2>/dev/null; antigravity-ide --install-extension /tmp/antigravity-meter.vsix --force
+curl -sL https://github.com/davidcasanovasola-git/antigravity-meter/releases/latest/download/antigravity-meter-1.4.0.vsix -o /tmp/antigravity-meter.vsix && antigravity-ide --install-extension /tmp/antigravity-meter.vsix --force
 ```
 
 ---
