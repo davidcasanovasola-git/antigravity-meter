@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0d1117;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #e6edf3;
+    padding: 32px;
+    width: 900px;
+  }
+  .card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 16px 36px rgba(0,0,0,0.5);
+  }
+  .header {
+    background: linear-gradient(135deg, #1f2937, #111827);
+    padding: 20px 24px;
+    border-bottom: 1px solid #30363d;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #58a6ff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .header-badge {
+    background: #238636;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+  .content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .panel-box {
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #30363d;
+  }
+  .panel-old {
+    background: rgba(248, 81, 73, 0.05);
+    border-color: rgba(248, 81, 73, 0.3);
+  }
+  .panel-new {
+    background: rgba(46, 160, 67, 0.08);
+    border-color: rgba(46, 160, 67, 0.4);
+    box-shadow: 0 0 20px rgba(46, 160, 67, 0.1);
+  }
+  .box-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .title-old { color: #f85149; }
+  .title-new { color: #3fb950; }
+  
+  .statusbar-preview {
+    background: #18181b;
+    border: 1px solid #27272a;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-family: "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    overflow-x: auto;
+  }
+  .statusbar-old {
+    color: #a1a1aa;
+  }
+  .statusbar-new {
+    color: #f4f4f5;
+    background: #09090b;
+    border-color: #3b82f6;
+  }
+  .gemini-pill { color: #38bdf8; font-weight: 600; }
+  .claude-pill { color: #fb923c; font-weight: 600; }
+  .highlight-sem { 
+    background: rgba(56, 189, 248, 0.15); 
+    padding: 2px 6px; 
+    border-radius: 4px;
+    color: #7dd3fc;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+  }
+  .highlight-sem-claude { 
+    background: rgba(251, 146, 60, 0.15); 
+    padding: 2px 6px; 
+    border-radius: 4px;
+    color: #fdba74;
+    border: 1px solid rgba(251, 146, 60, 0.3);
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .tag {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .tag-bad { background: rgba(248, 81, 73, 0.15); color: #ff7b72; border: 1px solid rgba(248, 81, 73, 0.3); }
+  .tag-good { background: rgba(46, 160, 67, 0.15); color: #7ee787; border: 1px solid rgba(46, 160, 67, 0.3); font-weight: 600; }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    background: #0d1117;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #21262d;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  .feat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #c9d1d9;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <div class="header-title">
+        <span>⏳ Antigravity Meter vs Antigravity Panel</span>
+      </div>
+      <div class="header-badge">UPGRADE v1.4.0</div>
+    </div>
+
+    <div class="content">
+      <!-- OLD PANEL -->
+      <div class="panel-box panel-old">
+        <div class="box-title title-old">
+          <span>❌ Antigravity Panel (Versión Anterior)</span>
+        </div>
+        <div class="statusbar-preview statusbar-old">
+          <span>⚪ Gemini: 95%</span>
+          <span style="color:#52525b">|</span>
+          <span>⚪ Claude: 100%</span>
+        </div>
+        <div class="tag-list">
+          <span class="tag tag-bad">❌ Sin Límite Semanal en barra</span>
+          <span class="tag tag-bad">❌ Sin tiempo hasta el reseteo</span>
+          <span class="tag tag-bad">⚠️ WebViews pesadas (>50 MB)</span>
+          <span class="tag tag-bad">⚠️ Popups molestos en el IDE</span>
+        </div>
+      </div>
+
+      <!-- NEW METER -->
+      <div class="panel-box panel-new">
+        <div class="box-title title-new">
+          <span>✅ Antigravity Meter (Nuestra Nueva Versión)</span>
+        </div>
+        <div class="statusbar-preview statusbar-new">
+          <span>🟢 <span class="gemini-pill">Gemini: 95%</span> (3h 39m) · <span class="highlight-sem">Sem: 91% (6d 1h)</span></span>
+          <span style="color:#3f3f46">|</span>
+          <span>🟢 <span class="claude-pill">Claude: 100%</span> (4h 58m) · <span class="highlight-sem-claude">Sem: 50% (3d 13h)</span></span>
+        </div>
+        <div class="tag-list">
+          <span class="tag tag-good">✅ Límite Semanal visible de un vistazo</span>
+          <span class="tag tag-good">✅ Cuenta atrás 5h y 7d en tiempo real</span>
+          <span class="tag tag-good">✅ Notificaciones nativas de macOS con sonido</span>
+          <span class="tag tag-good">✅ 100% Ultra-ligero (< 1 MB, 0 bloat)</span>
+        </div>
+
+        <div class="features-grid">
+          <div class="feat-item">🔔 Alertas nativas de sistema</div>
+          <div class="feat-item">🎧 Preview de sonidos en ajustes</div>
+          <div class="feat-item">🛡️ Reintento silencioso al recargar</div>
+          <div class="feat-item">🌍 Multi-idioma nativo auto</div>
+          <div class="feat-item">⚡ Arranque en &lt; 5 ms</div>
+          <div class="feat-item">🎨 Icono transparente calibrado</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
