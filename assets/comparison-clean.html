@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0d1117;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #e6edf3;
+    padding: 24px;
+    width: 900px;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .row {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .row-header {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1c2128;
+    border-bottom: 1px solid #30363d;
+  }
+  .label-old { color: #f85149; }
+  .label-new { color: #3fb950; }
+  .tag {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 500;
+  }
+  .tag-old { background: rgba(248,81,73,0.15); color: #ff7b72; border: 1px solid rgba(248,81,73,0.3); }
+  .tag-new { background: rgba(46,160,67,0.15); color: #7ee787; border: 1px solid rgba(46,160,67,0.3); }
+
+  /* Realistic VS Code / Antigravity IDE Status Bar Strip */
+  .vscode-statusbar {
+    height: 34px;
+    background: #18181b;
+    border-top: 1px solid #27272a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "JetBrains Mono", Consolas, monospace;
+    font-size: 12px;
+    white-space: nowrap !important;
+  }
+  .sb-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap !important;
+  }
+  .sb-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #71717a;
+    font-size: 11px;
+    white-space: nowrap !important;
+  }
+
+  /* Specific Items */
+  .sb-meter-old {
+    color: #a1a1aa;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: "JetBrains Mono", Menlo, Consolas, monospace;
+  }
+  .sb-meter-new {
+    color: #f4f4f5;
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: "JetBrains Mono", Menlo, Consolas, monospace;
+    white-space: nowrap !important;
+  }
+  .gemini-text { color: #38bdf8; font-weight: 600; }
+  .claude-text { color: #fb923c; font-weight: 600; }
+  .sem-badge {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: #e4e4e7;
+  }
+  .sep {
+    color: #52525b;
+    margin: 0 4px;
+  }
+</style>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- ANTES -->
+    <div class="row">
+      <div class="row-header">
+        <span class="label-old">❌ ANTERIOR (Antigravity Panel)</span>
+        <span class="tag tag-old">Sin límite semanal · Sin tiempo de reseteo</span>
+      </div>
+      <div class="vscode-statusbar">
+        <div class="sb-left">
+          <span style="color:#60a5fa">main*</span>
+          <span class="sb-meter-old">Gemini: 95% | Claude: 100%</span>
+        </div>
+        <div class="sb-right">
+          <span>Ln 42, Col 18</span>
+          <span>Spaces: 2</span>
+          <span>UTF-8</span>
+          <span>JavaScript</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AHORA -->
+    <div class="row" style="border-color: #238636; box-shadow: 0 0 16px rgba(46,160,67,0.15);">
+      <div class="row-header" style="background:#13231b; border-color:#238636;">
+        <span class="label-new">✅ NUEVO (Antigravity Meter)</span>
+        <span class="tag tag-new">Límite Semanal oficial + Cuenta atrás 5h y 7d en vivo</span>
+      </div>
+      <div class="vscode-statusbar" style="background:#09090b; border-color:#1e3a8a;">
+        <div class="sb-left">
+          <span style="color:#60a5fa">main*</span>
+          <div class="sb-meter-new">
+            <span>🟢 <span class="gemini-text">Gemini: 95%</span> (3h 39m) · <span class="sem-badge">Sem: 91% (6d 1h)</span></span>
+            <span class="sep">|</span>
+            <span>🟢 <span class="claude-text">Claude: 100%</span> (4h 58m) · <span class="sem-badge">Sem: 50% (3d 13h)</span></span>
+          </div>
+        </div>
+        <div class="sb-right">
+          <span>Ln 42, Col 18</span>
+          <span>Spaces: 2</span>
+          <span>UTF-8</span>
+          <span>JavaScript</span>
+          <span style="color:#38bdf8;">🔔 Alertas ON</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
