@@ -30,7 +30,8 @@ const DICTIONARIES = {
     fiveHours: '5 Hours',
     weekly: 'Weekly',
     testNotifSubtitle: 'Sound and notification test',
-    testNotifMsg: 'Antigravity Meter notification system is working properly!'
+    testNotifMsg: 'Antigravity Meter notification system is working properly!',
+    notificationFailed: 'Could not deliver system notification. Please check your operating system notification settings.'
   },
   es: {
     weeklyShort: 'Sem',
@@ -56,7 +57,8 @@ const DICTIONARIES = {
     fiveHours: '5 Horas',
     weekly: 'Semanal',
     testNotifSubtitle: 'Prueba de sonido y notificación',
-    testNotifMsg: '¡El sistema de notificaciones de Antigravity Meter está funcionando correctamente!'
+    testNotifMsg: '¡El sistema de notificaciones de Antigravity Meter está funcionando correctamente!',
+    notificationFailed: 'No se pudo emitir la notificación de sistema. Comprueba los permisos de notificación de tu sistema operativo.'
   },
   fr: {
     weeklyShort: 'Hebdo',
@@ -82,7 +84,8 @@ const DICTIONARIES = {
     fiveHours: '5 Heures',
     weekly: 'Hebdomadaire',
     testNotifSubtitle: 'Test de son et notification',
-    testNotifMsg: 'Le système de notification d\'Antigravity Meter fonctionne correctement !'
+    testNotifMsg: 'Le système de notification d\'Antigravity Meter fonctionne correctement !',
+    notificationFailed: 'Impossible d\'envoyer la notification système. Vérifiez les autorisations de notification de votre système d\'exploitation.'
   },
   de: {
     weeklyShort: 'Wöch',
@@ -108,7 +111,8 @@ const DICTIONARIES = {
     fiveHours: '5 Stunden',
     weekly: 'Wöchentlich',
     testNotifSubtitle: 'Sound- und Benachrichtigungstest',
-    testNotifMsg: 'Das Antigravity Meter Benachrichtigungssystem funktioniert einwandfrei!'
+    testNotifMsg: 'Das Antigravity Meter Benachrichtigungssystem funktioniert einwandfrei!',
+    notificationFailed: 'Systembenachrichtigung konnte nicht gesendet werden. Bitte überprüfen Sie die Benachrichtigungseinstellungen Ihres Betriebssystems.'
   },
   'zh-cn': {
     weeklyShort: '周限',
@@ -134,7 +138,8 @@ const DICTIONARIES = {
     fiveHours: '5小时',
     weekly: '每周',
     testNotifSubtitle: '声音与通知测试',
-    testNotifMsg: 'Antigravity Meter 通知系统运行正常！'
+    testNotifMsg: 'Antigravity Meter 通知系统运行正常！',
+    notificationFailed: '无法发送系统通知。请检查操作系统的通知权限。'
   },
   ja: {
     weeklyShort: '週間',
@@ -160,7 +165,8 @@ const DICTIONARIES = {
     fiveHours: '5時間',
     weekly: '週間',
     testNotifSubtitle: '通知とサウンドのテスト',
-    testNotifMsg: 'Antigravity Meter の通知システムは正常に動作しています！'
+    testNotifMsg: 'Antigravity Meter の通知システムは正常に動作しています！',
+    notificationFailed: 'システム通知を送信できませんでした。OSの通知設定と権限を確認してください。'
   },
   'pt-br': {
     weeklyShort: 'Sem',
@@ -186,7 +192,8 @@ const DICTIONARIES = {
     fiveHours: '5 Horas',
     weekly: 'Semanal',
     testNotifSubtitle: 'Teste de som e notificação',
-    testNotifMsg: 'O sistema de notificações do Antigravity Meter está funcionando corretamente!'
+    testNotifMsg: 'O sistema de notificações do Antigravity Meter está funcionando corretamente!',
+    notificationFailed: 'Não foi possível enviar a notificação do sistema. Verifique as permissões de notificação do seu sistema operacional.'
   },
   it: {
     weeklyShort: 'Sett',
@@ -212,7 +219,8 @@ const DICTIONARIES = {
     fiveHours: '5 Ore',
     weekly: 'Settimanale',
     testNotifSubtitle: 'Test suono e notifica',
-    testNotifMsg: 'Il sistema di notifiche di Antigravity Meter funziona correttamente!'
+    testNotifMsg: 'Il sistema di notifiche di Antigravity Meter funziona correttamente!',
+    notificationFailed: 'Impossibile inviare la notifica di sistema. Verifica i permessi di notifica del tuo sistema operativo.'
   }
 };
 

@@ -8,7 +8,6 @@
   "config.language.description": "Idioma de visualización de la extensión. En modo 'auto' detecta el idioma del ordenador/IDE automáticamente.",
   "config.notifications.enabled.description": "Activar notificaciones nativas de sistema operativo (no del IDE) cuando se resetea una ventana de cuota.",
   "config.notifications.sound.description": "Emitir sonido con la notificación de sistema cuando se resetea una ventana de cuota.",
-  "config.notifications.soundName.description": "Sonido de alerta para las notificaciones en macOS.",
+  "config.notifications.soundName.description": "Sonido de alerta para las notificaciones del sistema (macOS / Windows).",
   "config.refreshInterval.description": "Intervalo de comprobación periódica en segundos."
 }
-

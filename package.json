@@ -2,7 +2,7 @@
   "name": "antigravity-meter",
   "displayName": "Antigravity Meter",
   "description": "Medidor hiper-simplificado de cuota para Antigravity IDE (Gemini y Claude/GPT) con límite semanal y notificaciones de sistema.",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "publisher": "dcasanos",
   "icon": "assets/icon.png",
   "license": "MIT",
@@ -149,7 +149,7 @@
             "Pop"
           ],
           "description": "%config.notifications.soundName.description%",
-          "markdownDescription": "Sonido de alerta para las notificaciones en macOS. Al cambiar la opción en este selector sonará automáticamente como vista previa.\n\n[▶ Probar este sonido](command:antigravityMeter.testSound) · [🔔 Probar notificación completa](command:antigravityMeter.testNotification)"
+          "markdownDescription": "Sonido de alerta para las notificaciones (macOS / Windows). Al cambiar la opción en este selector sonará automáticamente como vista previa.\n\n[▶ Probar este sonido](command:antigravityMeter.testSound) · [🔔 Probar notificación completa](command:antigravityMeter.testNotification)"
         },
         "antigravityMeter.refreshInterval": {
           "type": "number",

@@ -4,7 +4,7 @@
   <p><strong>The hyper-simplified, zero-bloat quota & weekly limit meter for Google Antigravity IDE.</strong></p>
 
   <p>
-    <a href="https://github.com/davidcasanovasola-git/antigravity-meter/releases"><img src="https://img.shields.io/badge/version-1.4.0-blue.svg?style=flat-square" alt="Version 1.4.0" /></a>
+    <a href="https://github.com/davidcasanovasola-git/antigravity-meter/releases"><img src="https://img.shields.io/badge/version-1.4.1-blue.svg?style=flat-square" alt="Version 1.4.0" /></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg?style=flat-square" alt="MIT License" /></a>
     <img src="https://img.shields.io/badge/Antigravity%20IDE-%5E1.80.0-purple.svg?style=flat-square" alt="Antigravity IDE" />
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome" />
@@ -34,7 +34,7 @@ Most quota extensions for AI IDEs come packed with bloat: heavy WebViews, backgr
 - **📊 Dual-Window Visibility**: Antigravity divides quotas into a **5-hour dynamic burst window** and a **7-day weekly tier limit**. Antigravity Meter displays both simultaneously at a glance.
 - **⏱️ Optional Inline Countdowns**: Toggle between showing remaining time inline (`both`, `5h`, `weekly`) or keeping it to clean percentages (`none`).
 - **💡 Rich Hover Card**: Hover over the status bar item to view the exact reset timestamp in your local timezone and breakdown per model group.
-- **🔔 Native OS Notifications & Audio**: When a quota window resets, get an alert via your OS Notification Center (macOS AppleScript) with a gentle sound (`Glass`, `Ping`, etc.) — **zero annoying IDE popups**.
+- **🔔 Native OS Notifications & Audio**: When a quota window resets, get an alert via your OS Notification Center (macOS & Windows Action Center) with a gentle sound (`Glass`, `Ping`, etc.) — **zero annoying IDE popups**.
 - **🎧 Live Sound Previews**: Hear your alert sound immediately in real-time as soon as you change it in Settings.
 - **🛡️ Resilient Startup Daemon**: Tolerates slow language server startups gracefully — silent initial retries (0s, 1.5s, 3s, 5s) and automatic self-healing background reconnection without crashing.
 - **🌍 Native Auto-Localization**: Detects your OS and IDE language automatically (supporting English, Spanish, French, German, Chinese, Japanese, Portuguese, and Italian) with manual override.
@@ -77,7 +77,7 @@ Clean and minimal settings:
   // Play audio alert with reset notifications
   "antigravityMeter.notifications.sound": true,
 
-  // macOS system sound name ("Glass", "Ping", "Hero", "Pop", "Basso", etc.)
+  // System alert sound name (macOS & Windows) ("Glass", "Ping", "Hero", "Pop", "Basso", etc.)
   "antigravityMeter.notifications.soundName": "Glass",
 
   // Background polling interval in seconds
@@ -96,7 +96,7 @@ Clean and minimal settings:
 | :--- | :--- |
 | `Antigravity Meter: Refresh Quota` | Force an immediate query of the Antigravity Language Server RPC. |
 | `Antigravity Meter: Test Sound` | Test your currently configured notification audio alert. |
-| `Antigravity Meter: Test System Notification` | Send a test native notification to macOS Notification Center. |
+| `Antigravity Meter: Test System Notification` | Send a test native notification to your OS Notification Center (macOS & Windows). |
 
 ---
 
@@ -107,7 +107,7 @@ Clean and minimal settings:
 Simply copy and paste this prompt into your Antigravity chat:
 
 ```text
-Please install the Antigravity Meter extension from GitHub by downloading https://github.com/davidcasanovasola-git/antigravity-meter/releases/latest/download/antigravity-meter-1.4.0.vsix and installing it with "antigravity-ide --install-extension <path> --force".
+Please install the Antigravity Meter extension from GitHub by downloading https://github.com/davidcasanovasola-git/antigravity-meter/releases/latest/download/antigravity-meter-1.4.1.vsix and installing it with "antigravity-ide --install-extension <path> --force".
 ```
 
 ---
@@ -117,17 +117,17 @@ Please install the Antigravity Meter extension from GitHub by downloading https:
 Paste this in your terminal to automatically download and install Antigravity Meter:
 
 ```bash
-curl -sL https://github.com/davidcasanovasola-git/antigravity-meter/releases/latest/download/antigravity-meter-1.4.0.vsix -o /tmp/antigravity-meter.vsix && antigravity-ide --install-extension /tmp/antigravity-meter.vsix --force
+curl -sL https://github.com/davidcasanovasola-git/antigravity-meter/releases/latest/download/antigravity-meter-1.4.1.vsix -o /tmp/antigravity-meter.vsix && antigravity-ide --install-extension /tmp/antigravity-meter.vsix --force
 ```
 
 ---
 
 ### 🛠️ Option 3: Manual Install / Build from Source
 
-1. Download `antigravity-meter-1.4.0.vsix` directly from [Releases](https://github.com/davidcasanovasola-git/antigravity-meter/releases).
+1. Download `antigravity-meter-1.4.1.vsix` directly from [Releases](https://github.com/davidcasanovasola-git/antigravity-meter/releases).
 2. Install via GUI (*Extensions -> `...` -> Install from VSIX...*) or terminal:
    ```bash
-   antigravity-ide --install-extension antigravity-meter-1.4.0.vsix
+   antigravity-ide --install-extension antigravity-meter-1.4.1.vsix
    ```
 
 To build manually from source:
@@ -135,7 +135,7 @@ To build manually from source:
 git clone https://github.com/davidcasanovasola-git/antigravity-meter.git
 cd antigravity-meter
 npx @vscode/vsce package --no-dependencies
-antigravity-ide --install-extension antigravity-meter-1.4.0.vsix
+antigravity-ide --install-extension antigravity-meter-1.4.1.vsix
 ```
 
 ---

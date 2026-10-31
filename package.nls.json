@@ -8,7 +8,6 @@
   "config.language.description": "Display language for the extension. In 'auto' mode, it automatically detects the computer/IDE language.",
   "config.notifications.enabled.description": "Enable native OS notifications (not IDE popups) when a quota window resets.",
   "config.notifications.sound.description": "Play sound with system notification when a quota window resets.",
-  "config.notifications.soundName.description": "Alert sound for macOS notifications.",
+  "config.notifications.soundName.description": "Alert sound for system notifications (macOS / Windows).",
   "config.refreshInterval.description": "Periodic check interval in seconds."
 }
-

@@ -216,7 +216,7 @@ function activate(context) {
     });
 
     if (!ok) {
-      vscode.window.showWarningMessage('No se pudo emitir la notificación de sistema. Comprueba los permisos de notificación de macOS.');
+      vscode.window.showWarningMessage(i18n.t('notificationFailed'));
     }
   });
 
