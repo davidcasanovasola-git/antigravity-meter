@@ -65,12 +65,7 @@ class NotificationService {
       }
 
       cp.execFile('osascript', ['-e', script], (error) => {
-        if (error) {
-          console.error('[Antigravity Meter] Error al enviar notificación macOS:', error);
-          resolve(false);
-        } else {
-          resolve(true);
-        }
+        resolve(!error);
       });
     });
   }
@@ -147,6 +142,14 @@ try {
   $sent = $false
   foreach ($appId in $appIds) {
     try {
+      $regPath = "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Notifications\\Settings\\$appId"
+      if (-not (Test-Path $regPath)) {
+        New-Item -Path $regPath -Force | Out-Null
+      }
+      Set-ItemProperty -Path $regPath -Name 'Enabled' -Value 1 -Type DWord -ErrorAction SilentlyContinue
+      Set-ItemProperty -Path $regPath -Name 'ShowBanner' -Value 1 -Type DWord -ErrorAction SilentlyContinue
+      Remove-ItemProperty -Path $regPath -Name 'LastOptOutTime' -ErrorAction SilentlyContinue
+
       $notifier = [Windows.UI.Notifications.ToastNotificationManager]::CreateToastNotifier($appId)
       $notifier.Show($toast)
       $sent = $true

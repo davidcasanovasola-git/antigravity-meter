@@ -4,7 +4,7 @@
   <p><strong>The hyper-simplified, zero-bloat quota & weekly limit meter for Google Antigravity IDE.</strong></p>
 
   <p>
-    <a href="https://github.com/davidcasanovasola-git/antigravity-meter/releases"><img src="https://img.shields.io/badge/version-1.4.1-blue.svg?style=flat-square" alt="Version 1.4.0" /></a>
+    <a href="https://github.com/davidcasanovasola-git/antigravity-meter/releases"><img src="https://img.shields.io/badge/version-1.4.2-blue.svg?style=flat-square" alt="Version 1.4.0" /></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg?style=flat-square" alt="MIT License" /></a>
     <img src="https://img.shields.io/badge/Antigravity%20IDE-%5E1.80.0-purple.svg?style=flat-square" alt="Antigravity IDE" />
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome" />
@@ -107,7 +107,7 @@ Clean and minimal settings:
 Simply copy and paste this prompt into your Antigravity chat:
 
 ```text
-Please install the Antigravity Meter extension from GitHub by downloading https://github.com/davidcasanovasola-git/antigravity-meter/releases/latest/download/antigravity-meter-1.4.1.vsix and installing it with "antigravity-ide --install-extension <path> --force".
+Please install the Antigravity Meter extension from GitHub by downloading https://github.com/davidcasanovasola-git/antigravity-meter/releases/latest/download/antigravity-meter-1.4.2.vsix and installing it with "antigravity-ide --install-extension <path> --force".
 ```
 
 ---
@@ -117,17 +117,17 @@ Please install the Antigravity Meter extension from GitHub by downloading https:
 Paste this in your terminal to automatically download and install Antigravity Meter:
 
 ```bash
-curl -sL https://github.com/davidcasanovasola-git/antigravity-meter/releases/latest/download/antigravity-meter-1.4.1.vsix -o /tmp/antigravity-meter.vsix && antigravity-ide --install-extension /tmp/antigravity-meter.vsix --force
+curl -sL https://github.com/davidcasanovasola-git/antigravity-meter/releases/latest/download/antigravity-meter-1.4.2.vsix -o /tmp/antigravity-meter.vsix && antigravity-ide --install-extension /tmp/antigravity-meter.vsix --force
 ```
 
 ---
 
 ### 🛠️ Option 3: Manual Install / Build from Source
 
-1. Download `antigravity-meter-1.4.1.vsix` directly from [Releases](https://github.com/davidcasanovasola-git/antigravity-meter/releases).
+1. Download `antigravity-meter-1.4.2.vsix` directly from [Releases](https://github.com/davidcasanovasola-git/antigravity-meter/releases).
 2. Install via GUI (*Extensions -> `...` -> Install from VSIX...*) or terminal:
    ```bash
-   antigravity-ide --install-extension antigravity-meter-1.4.1.vsix
+   antigravity-ide --install-extension antigravity-meter-1.4.2.vsix
    ```
 
 To build manually from source:
@@ -135,7 +135,7 @@ To build manually from source:
 git clone https://github.com/davidcasanovasola-git/antigravity-meter.git
 cd antigravity-meter
 npx @vscode/vsce package --no-dependencies
-antigravity-ide --install-extension antigravity-meter-1.4.1.vsix
+antigravity-ide --install-extension antigravity-meter-1.4.2.vsix
 ```
 
 ---
